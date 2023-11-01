@@ -1,0 +1,28 @@
+<!-- homepage.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1 id="welcomeMessage"></h1>
+    <script>
+        // Function to extract the name from the URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Extract the name from the URL and display it
+        var name = getParameterByName('name');
+        if (name) {
+            document.getElementById('welcomeMessage').innerText = 'Welcome ' + name;
+        }
+    </script>
+</body>
+</html>

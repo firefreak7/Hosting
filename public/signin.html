@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In Page</title>
+    
+    <!-- css links -->
+    <link rel="stylesheet" type="text/css" href="css/signinstyle.css">
+    <!-- boxicon -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fontas/remixicon.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,500&family=Roboto:ital,wght@0,300;1,300;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('img/bg.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <header>
+        <a href="#" class="logo">Quizzy</a>
+    </header>
+
+    <div class="boxer">
+        <div class="form-login">
+            <h2>Login</h2>
+            <form action="/login_pass" method="post">
+                <div class="input-box">
+                    <i class="icon"><box-icon name='envelope' type='solid' ></box-icon></i>
+                    <input id="email" name="email" type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <i class="ri-lock-fill"></i>
+                    <span class="icon"><i class="ri-lock-fill"></i></span>
+                    <input id="password" name="password" type="password" required >
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register">
+                    <p>Don't have an account?
+                        <a href="#" class="register-move">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/twoscript.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Add event listener for Sign In button
+            document.querySelector(".register-move").addEventListener("click", function() {
+                window.location.href="register.html";
+            });
+        });
+
+        
+const sr = ScrollReveal ({
+    distance: '65px',
+    duration: 2000,
+    delay: 450,
+    reset: true
+});
+
+sr.reveal('.boxer',{delay:200, origin:'top'})
+    </script>
+</body>
+</html>
