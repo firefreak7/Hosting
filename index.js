@@ -50,6 +50,9 @@ app.post("/signup", (req, res) => {
             throw err;
         }
         console.log("record Inserted");
+    }).catch((err) => {
+        console.log(err);
+        return res.status(500).send();
     });
     return res.redirect('homepage.html');
 });
@@ -79,10 +82,7 @@ app.post("/login_pass", (req, res) => {
     //     return res.redirect('/homepage.html?name=${email}');
 
     // })
-    .catch((err) => {
-        console.log(err);
-        return res.status(500).send();
-    });
+    
     
 });
 
